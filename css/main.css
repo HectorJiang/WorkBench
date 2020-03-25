@@ -1,3 +1,7 @@
+a{
+    text-decoration:none;
+}
+
 .sticky-top{
     position: sticky;
     top: 0;
@@ -110,4 +114,68 @@ footer .container a, footer .container span {
     margin: 0 5px;
     color: #525252;
     font-size: 15px;
+}
+
+
+
+
+body {
+    /* background: #232321; */
+  }
+  h1 {
+    color: #fff;
+    padding: 10px 0;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border: none;
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    a {
+      color: initial;
+      &:hover {
+        text-decoration: initial;
+      }
+    }
+    .text-muted i {
+      margin: 0 10px;
+    }
+  }
+  
+.text-muted {
+    color: #6c757d!important;
+}
+
+
+.small, small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+p {
+    
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+.card a {
+    color: initial;
+}
+
+
+
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6!important;
 }
