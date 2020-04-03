@@ -1,29 +1,19 @@
-# personal-blog
-Personal blog based on bootstrap from scratch.
+# demo
 
+## Project setup
+```
+npm install
+```
 
-index.html
-简单大气欢迎页，包括个人简介
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
+### Compiles and minifies for production
+```
+npm run build
+```
 
-space.html:
-1.个人简历
-2.历史项目，可体验
-3.记录生活
-4.生活相册
-
-box.html:
-工具分类
-
-msg.html:
-留言板
-
-
-
-
-
-
-
-
-
-
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
