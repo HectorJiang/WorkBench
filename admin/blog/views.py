@@ -69,15 +69,10 @@ def getrandom():
 
 
 
+
 # 查询单个文章
 class Articles_simple(View):
     def get(self, request,id):
-        # data=Blog.objects.filter(blog_id=int(id))
-        # res={}
-        # res["code"]="200"
-        # res["result"]=model_to_dict(data)
-        # return JsonResponse(res)
-    
         res={}
         res["code"]="200"
         with connection.cursor() as cursor:
@@ -97,7 +92,7 @@ class Articles_simple(View):
 # 分类
 class CategoryView(View):
     # 查询所有分类
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         try:
             categories = Category.objects.all() # 查询服务器信息
         except Exception as e:
@@ -114,8 +109,10 @@ class CategoryView(View):
 
         return JsonResponse(res)
 
+
+    
     # 添加单个分类
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         try:
             req=json.loads(request.body.decode('utf-8'))
             print(req)
@@ -155,8 +152,62 @@ class CategoryView(View):
     
 
  
+class CategoryDetailView(View):
+    # 获取所有详细分类
+    def get(self, request):
+        res={}
+        res["code"]="200"
+        with connection.cursor() as cursor:
+            cursor.execute('select name,count(1) from blog_blog a inner join blog_category b on a.category_id=b.id group by name')
+            data = cursor.fetchall()
+            print(data)
+            res["result"]=dict(data)
+        return JsonResponse(res,safe=False)   
+
+    # def post(self, request):
+    #     return HttpResponse('POST request!')
+
 
 # 查询存档
+class ArchiveView(View):
+    # 获取所有归档
+    def get(self, request):
+        res={}
+        res["code"]="200"
+        with connection.cursor() as cursor:
+            cursor.execute('select DATE_FORMAT(created_time,"%Y/%m"),count(1) from blog_blog group by DATE_FORMAT(created_time,"%Y/%m")')
+            data = cursor.fetchall()
+            print(data)
+            res["result"]=dict(data)
+        return JsonResponse(res,safe=False)      
+       
+
+#  获取所有归档对应博客
+def archive_detail(request,year,month):
+    print(year,month)
+    res={}
+    res["code"]="200"
+    print(year+"/"+month)
+    with connection.cursor() as cursor:
+        cursor.execute('select id,blog_id,title,content,created_time from blog_blog where DATE_FORMAT(created_time,"%Y/%m")={}'.format(year+"/"+month))
+        data = cursor.fetchall()
+        print(data)
+        fields=["id","blog_id","title","content","created_time"]
+        L=[list(e) for e in data]
+        res["result"]=[dict(zip(fields,i)) for i in L]
+        return JsonResponse(res,safe=False)   
 
 
-# 查询个人信息
+def simple_category(request,name):
+    # 查询单个分类对应的文章
+    res={}
+    res["code"]="200"
+    with connection.cursor() as cursor:
+        cursor.execute('select id,blog_id,title,content,created_time from blog_blog where DATE_FORMAT(created_time,"%Y/%m")={}'.format(year+"/"+month))
+        data = cursor.fetchall()
+        print(data)
+        fields=["id","blog_id","title","content","created_time"]
+        L=[list(e) for e in data]
+        res["result"]=[dict(zip(fields,i)) for i in L]
+        return JsonResponse(res,safe=False)      
+    
