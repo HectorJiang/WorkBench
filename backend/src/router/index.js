@@ -5,6 +5,7 @@ import Config from "../views/Config.vue"
 import ArticleAdd from "../views/ArticleAdd.vue"
 import ArticleList from "../views/ArticleList.vue"
 import ArticleCategory from "../views/ArticleCategory.vue"
+import ArticleEdit from "../views/ArticleEdit.vue"
 
 Vue.use(VueRouter)
 
@@ -43,6 +44,14 @@ const routes = [{
     path: '/article_list',
     name: 'article_list',
     component: ArticleList,
+    meta:{
+      title:"爱美食的Geek's 后台"
+    }
+  },
+  {
+    path: '/article_edit/:blog_id',
+    name: 'article_edit',
+    component: ArticleEdit,
     meta:{
       title:"爱美食的Geek's 后台"
     }

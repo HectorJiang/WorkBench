@@ -7,7 +7,7 @@
           </el-form-item>
           <el-form-item label=" 分类">
           <el-select v-model="formInline.category" placeholder="分类">
-            <el-option v-for="(category,i) in categories" :key="index" :label="category.name" :value="category.id">
+            <el-option v-for="(category,i) in categories" :key="i" :label="category.name" :value="category.id">
             </el-option>
           </el-select>
       </el-form-item>

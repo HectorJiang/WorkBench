@@ -124,5 +124,100 @@ django中函数视图与类视图
 https://blog.csdn.net/Growing_hacker/article/details/99729681
 
 
-django相关
+django外键相关
+https://blog.csdn.net/buxianghejiu/article/details/79086011?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1
 
+
+django添加外键出现的问题：
+https://www.jianshu.com/p/c829e140c295
+因为外键不能为空，所以需要添加一个默认值。
+
+
+django外键查询：
+https://blog.csdn.net/hpu_yly_bj/article/details/78939748
+
+
+
+通过比对django返回数据类型对应选用不同的方法:
+QuerySet数据——比如说filter、exclude、all、values等
+
+序列化类（rest_framework）- 推荐
+serializers方法
+list和values结合的方法 - 只适用于values
+ 
+
+Model类数据——比如说get、first等
+model_to_dict方法
+__dict__方法
+自定义to_dict方法 - 推荐
+
+
+
+有三种方式来处理数据
+
+一种是序列化类的方式，这个是基于rest_framework，所以需要安装rest_framework
+
+优点：输出格式很规范，可以处理时间字段的格式，可以控制输出的字段
+缺点：需要安装rest_framework，相对较为繁琐
+ 
+
+另一种是使用serializers方法：
+
+优点：容易实现，无需安装依赖
+缺点：输出格式不规范，不能直接处理时间字段的格式，不能处理values方法
+ 
+
+由于serializers方法返回的格式不是很规范，而且时间字段并没有做处理，使用序列化类的化，可以很好的处理时间字段，可以以我们想要的时间格式来输出，所以更推荐使用序列化类的方式
+
+
+如果是values方法的话，也有一种很简单的方法，使用list直接转即可
+
+优点：容易实现，输出格式很规范，可以控制输出的字段
+缺点：不能直接处理时间字段的格式
+
+https://blog.csdn.net/jiandanokok/article/details/103226969#%E4%B8%80%E3%80%81QuerySet%E6%95%B0%E6%8D%AE
+
+
+
+在django中执行自定义语句的时候，返回的结果是一个tuple ,并我不是我所期望的dict.
+当结果是tuple 时，如果要取得数据，必须知道对应数据在结果集中的序号,用序号的方式去得到值。
+
+
+
+元组，列表，字典之间应用场景以及相互转换
+>>> mytuple = (1,2,3)
+>>> print list(mytuple)           # Tuple to list
+[1, 2, 3]
+>>>
+>>> mylist = [1,2,3]              # List to tuple
+>>> print tuple(mylist)
+(1, 2, 3)
+>>>
+>>> mylist2 = [ ('blue',5), ('red',3), ('yellow',7) ]
+>>> print dict(mylist2)           # List to dictionnary
+{'blue': 5, 'yellow': 7, 'red': 3}
+>>>
+>>> mystring = 'hello'
+>>> print list(mystring)          # String to list
+['h', 'e', 'l', 'l', 'o']
+>>>
+>>> mylist3 = ['w','or','ld']
+>>> print ''.join(mylist3)        # List to string
+world
+>>>
+
+注意很重要的问题，当元组中()中元素一定要为2个，因为转换要之后处于一一对应。
+不然就是一个嵌套元组。
+
+zip() 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。
+zip()是可迭代对象，使用时必须将其包含在一个list中，方便一次性显示出所有结果
+
+高级用法:https://www.runoob.com/python/python-func-zip.html
+l = ['a', 'b', 'c', 'd', 'e','f']
+print zip(l[:-1],l[1:])
+[('a', 'b'), ('b', 'c'), ('c', 'd'), ('d', 'e'), ('e', 'f')]
+
+
+django ORM model filter 条件过滤，及多表连接查询、反向查询，某字段的distinct
+
+基于flask和mysql的restful 的API，字段和字段值转换为json，等共同问题。

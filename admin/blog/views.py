@@ -14,7 +14,16 @@ def index(request):
 
 class ArticleView(View):
     # 查询所有文章
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
+        res={}
+        res["code"]="200"
+        with connection.cursor() as cursor:
+            cursor.execute('select a.id,blog_id, title,name,content,a.created_time from blog_blog a inner join blog_category b on a.category_id=b.id order by a.id desc')
+            data = cursor.fetchall()
+            fields=["id","blog_id","title","category","content","created_time"]
+            L=[list(e) for e in data]
+            res["result"]=[dict(zip(fields,i)) for i in L]
+        return JsonResponse(res,safe=False)
         # articles = Blog.objects.order_by("-id") # 查询服务器信息
         # # 返回的结果
         # res={}
@@ -34,9 +43,20 @@ class ArticleView(View):
     # 添加单个文章
     def post(self, request, *args, **kwargs):
         req=json.loads(request.body.decode('utf-8'))
-        dic={"title":req["title"],"content":req["content"],"category_id":"12312","blog_id":getrandom()}
+        dic={"title":req["title"],"content":req["content"],"category_id":req["category"],"blog_id":getrandom()}
         Blog.objects.create(**dic)
         return JsonResponse({"code":"200","message":"success"})
+    
+    
+    # 删除单个文章
+    def delete(self,request):
+        try:
+            req=json.loads(request.body.decode('utf-8'))
+            Blog.objects.filter(blog_id=req["blog_id"]).delete()
+            return JsonResponse({"code":"200","message":"delete success"})
+        except Exception as e:
+            return JsonResponse({"code":"500","message":str(e)})          
+        
     
     
 # 获取随机数
@@ -52,11 +72,20 @@ def getrandom():
 # 查询单个文章
 class Articles_simple(View):
     def get(self, request,id):
-        data=Blog.objects.filter(blog_id=int(id))
+        # data=Blog.objects.filter(blog_id=int(id))
+        # res={}
+        # res["code"]="200"
+        # res["result"]=model_to_dict(data)
+        # return JsonResponse(res)
+    
         res={}
         res["code"]="200"
-        res["result"]=model_to_dict(data)
-        return JsonResponse(res)
+        with connection.cursor() as cursor:
+            cursor.execute('select id,blog_id,title,content,created_time from blog_blog where blog_id={}'.format(id))
+            data = cursor.fetchone()
+            fields=["id","blog_id","title","content","created_time"]
+            res["result"]=dict(zip(fields,list(data)))
+        return JsonResponse(res,safe=False)    
 
 
 
@@ -99,7 +128,7 @@ class CategoryView(View):
                 return JsonResponse({"code":"200","message":"success"})
         except Exception as e:
             return JsonResponse({"code":"500","message":str(e)})
-        
+
     # 更新分类
     def put(self, request):
         try:
@@ -124,7 +153,8 @@ class CategoryView(View):
         except Exception as e:
             return JsonResponse({"code":"500","message":str(e)})              
     
-            
+
+ 
 
 # 查询存档
 

@@ -91,4 +91,9 @@
     margin: 0px;
     padding: 0px;
   }
+  a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #606266;
+  }
 </style>

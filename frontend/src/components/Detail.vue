@@ -97,6 +97,7 @@
                     console.log(res)
                     if (res.data.code == "200") {
                         this.article = res.data.result;
+                        console.log(this.article)
                     }
                 }, error => {
 
