@@ -249,6 +249,17 @@ updated与mounted不同的是，在每一次的DOM结构更新，vue都会调用
 简单来说，只要在调试的时候，能看到元素的存在，在updated阶段都可以使用this.$refs.xxx找到对应的DOM节点！
 重点：https://www.jianshu.com/p/7dbdcd6dfad6
 
-
 基于Vue cli打包出现的问题：
 https://www.jianshu.com/p/eb9f5f9ea089
+
+
+
+
+
+
+
+修改vue标题
+
+https://www.cnblogs.com/CinderellaStory/p/10858035.html
+
+https://www.jianshu.com/p/406fa692edc8

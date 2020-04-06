@@ -1,10 +1,14 @@
 <template>
     <div class="row">
         <div class="archive col-md-12 col-lg-8 col-sm-12 content-area">
-            <Detail />
+            <header class="page-header">
+                <h1 class="archive-title">分类 PHP 下的文章                    </h1>
+                <span>这里是一些PHP相关的教程和笔记。</span>
+            </header>
+            <CategoryCard />
         </div>
         <div class="col-md-12 col-lg-4 col-sm-12 sidebar">
-            <Profile />
+            <!-- <Profile /> -->
             <Category />
             <Archive />
         </div>
@@ -14,12 +18,12 @@
     import Profile from '@/components/Profile.vue'
     import Archive from '@/components/Archive.vue'
     import Category from '@/components/Category.vue'
-    import Detail from '@/components/Detail.vue'
+    import CategoryCard from '@/components/CategoryCard.vue'
 
     export default {
         name: 'ArticleDetail',
         components: {
-            Profile, Archive, Category, Detail
+            Profile, Archive, Category, CategoryCard
         }
     }
 </script>

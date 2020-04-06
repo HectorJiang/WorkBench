@@ -2,6 +2,14 @@
         <section class="">
                 <h4>文章分类</h4>
                 <ul class="list-group list-group-flush" aria-label="文章分类">
+                        <li class="d-flex justify-content-between align-items-center border-bottom">
+                                <router-link :to="{path:'/category/'+'php'}" data-toggle="tooltip" data-placement="top"
+                                class="text-secondary" title=""
+                                data-original-title="这里包含了 Typecho 相关的教程和笔记。">PHP相关</router-link> 
+                                        <span class="badge badge-secondary badge-pill">19</span>
+                        </li>
+                </ul>                
+                <ul class="list-group list-group-flush" aria-label="文章分类">
                         <li class="d-flex justify-content-between align-items-center border-bottom"
                                 v-for="(value,name) in categories"><a data-toggle="tooltip" data-placement="top"
                                         class="text-secondary" href="" title=""

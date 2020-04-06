@@ -14,6 +14,7 @@
             <div class="website clearfix border-top">
                 <div class="info float-left border-right">
                     <p class="quantity">{{data.article_num}}</p>
+                    文章数
                 </div>
                 <div class="info float-left border-right">
                     <p class="quantity">{{data.run_time}}</p>
@@ -52,6 +53,7 @@
         //生命周期函数：挂载完成
         mounted() {
             this.getData();
+
         }
     }
 </script>

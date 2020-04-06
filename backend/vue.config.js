@@ -1,6 +1,6 @@
 module.exports = {
     devServer: {
-        port: 8002,
+        port: 8001,
         host: "localhost",
         open: true, //配置浏览器自动打开
         proxy: {

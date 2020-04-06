@@ -2,31 +2,29 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './assets/css/main.css'
-// import VuePrism from 'vue-prism'
-// import 'prismjs/themes/prism.css'
-// import Prism from "prismjs"; //引入插件
-// import hljs from 'highlight.js'
-// import 'highlight.js/styles/googlecode.css'
-import axios from 'axios'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import echarts from 'echarts'
+// import axios from 'axios'
 import "./assets/index.scss";
+import axios from 'axios'
+
+Vue.config.productionTip = false
+
+Vue.use(ElementUI);
+
+Vue.prototype.$echarts = echarts;
 Vue.prototype.$http = axios;
 axios.defaults.baseURL = 'http://localhost:8000'
 
-// Vue.directive('highlight',function (el) {
-//   let blocks = el.querySelectorAll('pre code');
-//   blocks.forEach((block)=>{
-//     hljs.highlightBlock(block)
-//   })
-// })
-
-// Prism.highlightAll()
-// Vue.use(VuePrism)
-Vue.config.productionTip = false
-
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
+    // es5写法
+    // render: function(createElement) {
+    //     return createElement(App)
+    // }
+    //es6写法
+    // render:createElement=>createElement(App)
 }).$mount('#app')
