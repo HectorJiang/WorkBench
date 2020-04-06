@@ -5,7 +5,7 @@ from django.http import HttpResponse,JsonResponse
 from django.forms.models import model_to_dict
 import json
 import random
-from .models import Blog
+from .models import Blog,Category
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
@@ -50,7 +50,7 @@ def getrandom():
 # 查询单个文章
 class Articles_simple(View):
     def get(self, request,id):
-        data=Blog.objects.get(blog_id=int(id))
+        data=Blog.objects.filter(blog_id=int(id))
         res={}
         res["code"]="200"
         res["result"]=model_to_dict(data)
@@ -63,8 +63,66 @@ class Articles_simple(View):
 # 编辑文章
 
 
-# 查询分类
+# 分类
+class CategoryView(View):
+    # 查询所有分类
+    def get(self, request, *args, **kwargs):
+        try:
+            categories = Category.objects.all() # 查询服务器信息
+        except Exception as e:
+            return JsonResponse({"code":"500","message":str(e)})
+        # 返回的结果
+        res={}
+        # 数据库查询数据
+        json_list=[]
+        for i in categories:
+            json_dict = model_to_dict(i)
+            json_list.append(json_dict)
+        res["code"]="200"
+        res["result"]=json_list
 
+        return JsonResponse(res)
+
+    # 添加单个分类
+    def post(self, request, *args, **kwargs):
+        try:
+            req=json.loads(request.body.decode('utf-8'))
+            print(req)
+            name=Category.objects.filter(name=req["name"])
+            if name.exists():
+                return JsonResponse({"code":"404","message":"error:category exists"})
+            else:
+                dic={"name":req["name"]}
+                Category.objects.create(**dic)
+                return JsonResponse({"code":"200","message":"success"})
+        except Exception as e:
+            return JsonResponse({"code":"500","message":str(e)})
+        
+    # 更新分类
+    def put(self, request):
+        try:
+            req=json.loads(request.body.decode('utf-8'))
+            print(req)
+            newname=Category.objects.filter(name=req["newname"])
+            if newname.exists():
+                return JsonResponse({"code":"404","message":"error:category exists"})
+            else:
+                Category.objects.filter(name=req["oldname"]).update(name=req["newname"])
+                return JsonResponse({"code":"200","message":"success"})
+        except Exception as e:
+            return JsonResponse({"code":"500","message":str(e)})            
+    
+    # 删除分类
+    def delete(self,request):
+        try:
+            req=json.loads(request.body.decode('utf-8'))
+            print(req)
+            Category.objects.filter(name=req["name"]).delete()
+            return JsonResponse({"code":"200","message":"delete success"})
+        except Exception as e:
+            return JsonResponse({"code":"500","message":str(e)})              
+    
+            
 
 # 查询存档
 

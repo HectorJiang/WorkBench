@@ -6,27 +6,14 @@
             <el-table-column prop="date" label="日期" width="180" sortable :filters="dataList"
                 :filter-method="filterHandler">
             </el-table-column>
-            <el-table-column prop="name" label="姓名" width="180">
-                <template slot-scope="scope">
-                    <el-popover trigger="hover" placement="top">
-                        <p>姓名: {{ scope.row.name }}</p>
-                        <p>住址: {{ scope.row.address }}</p>
+            <el-table-column prop="title" label="标题"" width="180">
+                <!-- <template slot-scope="scope">
                         <div slot="reference" class="name-wrapper">
-                            <el-tag size="medium">{{ scope.row.name }}</el-tag>
+                            <el-tag size="medium">{{ scope.row.title }}</el-tag>
                         </div>
-                    </el-popover>
-                </template>
+                </template> -->
             </el-table-column>
-            <el-table-column prop="address" label="地址">
-            </el-table-column>
-            <el-table-column prop="tag" label="标签" width="100"
-                :filters="[{ text: '家', value: '家' }, { text: '公司', value: '公司' }]" :filter-method="filterTag"
-                filter-placement="bottom-end">
-                <template slot-scope="scope">
-                    <el-tag :type="scope.row.tag === '家' ? 'primary' : 'success'" disable-transitions>
-                        {{scope.row.tag}}
-                    </el-tag>
-                </template>
+            <el-table-column prop="category" label="分类"">
             </el-table-column>
             <el-table-column label="操作">
                 <template slot-scope="scope">
@@ -49,7 +36,7 @@
         methods: {
             //请求数据
             getData() {
-                axios.get("/test.json").then(res => {
+                axios.get("/blog/articles").then(res => {
                     console.log(res)
                     if (res.data.code == "200") {
                         this.tableData = res.data.result;

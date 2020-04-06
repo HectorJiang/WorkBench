@@ -17,6 +17,15 @@ Vue.prototype.$echarts = echarts;
 Vue.prototype.$http = axios;
 axios.defaults.baseURL = 'http://localhost:8000'
 
+
+// 修改页面标题，对应router.js中meta.title
+router.beforeEach((to,from,next)=>{
+    if(to.meta.title){
+      document.title=to.meta.title
+    }
+    next()
+  })
+
 new Vue({
     router,
     store,

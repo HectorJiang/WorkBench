@@ -52,17 +52,39 @@
       </el-aside>
 
       <el-container>
-        <el-header style="margin:0 auto;">爱美食的Geek</el-header>
+        <el-header style="margin:0 auto;font-size:20px;">爱美食的Geek</el-header>
         <el-main>
-          <router-view />
+          <router-view v-if="isRouterAlive"/>
         </el-main>
-        <el-footer>Footer</el-footer>
+        <!-- <el-footer>Footer</el-footer> -->
       </el-container>
     </el-container>
 
   </div>
 </template>
-
+<script>
+  export default {
+    name:"app",
+    provide(){
+      return {
+        reload:this.reload
+      };
+    },
+    data(){
+      return {
+        isRouterAlive:true
+      }
+    },
+    methods: {
+      reload(){
+        this.isRouterAlive=false;
+        this.$nextTick(function(){
+          this.isRouterAlive=true
+        })
+      }
+    },
+  }
+</script>
 <style>
   body,
   html {

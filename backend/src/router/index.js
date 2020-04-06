@@ -34,17 +34,26 @@ const routes = [{
   {
     path: '/article_add',
     name: 'article_add',
-    component: ArticleAdd
+    component: ArticleAdd,
+    meta:{
+      title:"爱美食的Geek's 后台"
+    }
   },
   {
     path: '/article_list',
     name: 'article_list',
-    component: ArticleList
+    component: ArticleList,
+    meta:{
+      title:"爱美食的Geek's 后台"
+    }
   },
   {
     path: '/article_category',
     name: 'article_category',
-    component: ArticleCategory
+    component: ArticleCategory,
+    meta:{
+      title:"爱美食的Geek's 后台"
+    }
   }
 
 ]

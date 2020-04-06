@@ -200,6 +200,8 @@ https://www.cnblogs.com/jj1106/p/10995309.html
 Django数据库增删改查
 https://www.cnblogs.com/zuichuyouren/p/11094673.html
 
+https://blog.csdn.net/chen1042246612/article/details/84071006
+
 
 'dict' object has no attribute '_meta'
 http://www.voidcn.com/article/p-twoewrll-bpk.html
@@ -263,3 +265,54 @@ https://www.jianshu.com/p/eb9f5f9ea089
 https://www.cnblogs.com/CinderellaStory/p/10858035.html
 
 https://www.jianshu.com/p/406fa692edc8
+
+
+vue刷新页面：
+https://blog.csdn.net/baidu_39418435/article/details/81538760
+
+
+axios请求参数：
+https://blog.csdn.net/z9061/article/details/82283927
+如果服务端将参数当做 java对象来封装接收则 参数格式为：{data: param}
+var param={name:'jack',age:20}
+
+axios
+
+          .delete("/ehrReferralObjPro", {data: param})
+
+          .then(function(response) {
+
+            }
+如果服务端将参数当做url 参数 接收，则格式为：{params: param}，这样发送的url将变为http:www.XXX.com?a=..&b=..
+var param={name:'jack',age:20}
+
+axios
+
+          .delete("/ehrReferralObjPro", {params: param})
+
+          .then(function(response) {
+
+            }
+
+
+axios中delete方法传递参数的区别：
+https://blog.csdn.net/w_e_i_1201/article/details/86006816
+
+
+vue实现局部刷新
+https://blog.csdn.net/ftl_nxy/article/details/81225920
+
+
+
+v-for中的问题：需要绑定key，并且使用:id=""这种形式
+https://blog.csdn.net/weixin_43837268/article/details/86677868
+<el-badge
+      :value="item.badge"
+      v-for="(item, index) in tabs"
+      class="yh-tab-button"
+      :class="{'yh-badge-check':item.check,
+      'yh-badge-char':item.charBadge,
+      }"
+      :key="index"
+    >
+<el-badge>

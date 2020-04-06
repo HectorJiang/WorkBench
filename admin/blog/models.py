@@ -9,10 +9,11 @@ class Blog(models.Model):
     blog_id=models.IntegerField()
     title = models.TextField()  
     content = models.TextField()
-    category_id = models.IntegerField()
+    category= models.ForeignKey('Category',to_field='id',on_delete=models.CASCADE)
     created_time=models.DateField(auto_now_add=True)
     updated_time=models.DateField(auto_now_add=True)
     deleted_time=models.DateField(auto_now_add=True)
+    
     
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
