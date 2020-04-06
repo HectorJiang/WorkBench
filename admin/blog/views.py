@@ -6,6 +6,8 @@ from django.forms.models import model_to_dict
 import json
 import random
 from .models import Blog,Category
+from django.db import connection
+
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
@@ -13,20 +15,20 @@ def index(request):
 class ArticleView(View):
     # 查询所有文章
     def get(self, request, *args, **kwargs):
-        articles = Blog.objects.all() # 查询服务器信息
-        # 返回的结果
-        res={}
-        # 数据库查询数据
-        json_list=[]
-        for i in articles:
-            json_dict = model_to_dict(i)
-            json_list.append(json_dict)
-        res["code"]="200"
-        res["result"]=json_list
+        # articles = Blog.objects.order_by("-id") # 查询服务器信息
+        # # 返回的结果
+        # res={}
+        # # 数据库查询数据
+        # json_list=[]
+        # for i in articles:
+        #     json_dict = model_to_dict(i)
+        #     json_list.append(json_dict)
+        # res["code"]="200"
+        # res["result"]=json_list
         
         # articles_json = serializers.serialize('json', articles) # 将查询结果进行json序列化
         # return HttpResponse(articles_json, content_type="application/json") # 返回json数据
-        return JsonResponse(res)
+        # return JsonResponse(res)
         # return HttpResponse(json.dumps(dic, ensure_ascii=False))
 
     # 添加单个文章
