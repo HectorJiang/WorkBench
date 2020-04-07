@@ -10,7 +10,7 @@
                 <el-input v-model="formInline.title" placeholder="标题""></el-input>
             </el-form-item>
             <el-form-item label=" 分类">
-                    <el-select v-model="formInline.category" placeholder="分类">
+                    <el-select v-model="formInline.category_id" placeholder="分类">
                         <el-option v-for="(category,i) in categories" :key="i" :label="category.name"
                             :value="category.id">
                         </el-option>
@@ -39,8 +39,9 @@
                 article:"",
                 categories: [""],
                 formInline: {
+                    blog_id:this.$route.params.blog_id,
                     title: '',
-                    category: '',
+                    category_id: '',
                     content: null
                 }
             };
@@ -48,12 +49,23 @@
         methods: {
             //请求数据
             getData() {
-                this.$http.get("/blog/articles/" + this.$route.params.id).then(res => {
+                this.$http.get("/blog/articles/" + this.$route.params.blog_id).then(res => {
                     console.log(res)
                     if (res.data.code == "200") {
                         this.article = res.data.result;
                         //设置编辑区内容
-                        this.editor.setValue(res.data.result.content);      
+                        this.editor.setValue(res.data.result.content);     
+                        //设置标题
+                        this.formInline.title=res.data.result.title; 
+                        this.formInline.category=res.data.result.category; 
+                    }
+                }, error => {
+
+                })
+                this.$http.get("/blog/catetory").then(res => {
+                    console.log(res)
+                    if (res.data.code == "200") {
+                        this.categories = res.data.result;
                     }
                 }, error => {
 
@@ -90,10 +102,19 @@
             this.formInline.content = this.editor.getValue();
             var obj = JSON.stringify(this.formInline);
             console.log(obj)
-            this.$http.post("/blog/articles", obj).then(res => {
+            this.$http.put("/blog/articles", obj).then(res => {
                 console.log(res)
                 if (res.data.code == "200") {
-
+                    this.$message({
+                        type: 'success',
+                        message: res.data.message
+                    });
+                    this.$router.push('/article_list');
+                }else{
+                    this.$message({
+                        type: 'error',
+                        message: "A error happend"
+                    });
                 }
             }, error => {
 

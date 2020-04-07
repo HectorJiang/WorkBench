@@ -1,5 +1,9 @@
 <template>
     <div>
+        <header class="page-header">
+            <h1 class="archive-title">{{name}}  分类</h1>
+            <!-- <span>这里是一些PHP相关的教程和笔记。</span> -->
+        </header>        
         <div class="card mb-3" v-for="article in articles">
             <router-link :to="{path:'/article/'+article.blog_id}">
                 <img src="../assets/img/demo1.jpg" class="card-img-top" alt="..." style="height: 200px;">
@@ -22,16 +26,20 @@
     export default {
         data() {
             return {
-                articles: []
+                id: this.$route.params.id,
+                articles: [],
+                name:""
             }
         },
         methods: {
             //请求数据
             getData() {
-                this.$http.get("/blog/articles").then(res => {
+                console.log(this.id)
+                this.$http.get("/blog/simple_category/"+this.$route.params.id).then(res => {
                     console.log(res)
                     if (res.data.code == "200") {
                         this.articles = res.data.result;
+                        this.name=this.articles[0].name;
                     }
                 }, error => {
 

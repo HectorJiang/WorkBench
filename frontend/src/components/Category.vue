@@ -3,12 +3,12 @@
                 <h4>文章分类</h4>
                 <ul class="list-group list-group-flush" aria-label="文章分类">
                         <li class="d-flex justify-content-between align-items-center border-bottom"
-                                v-for="(value,name) in categories">
-                                <router-link :to="{path:'/category/'+name}" data-toggle="tooltip" data-placement="top"
+                                v-for="category in data">
+                                <router-link :to="{path:'/category/'+category.id}" data-toggle="tooltip" data-placement="top"
                                         class="text-secondary"  title=""
-                                        data-original-title="这里包含了 Typecho 相关的教程和笔记。">{{name}}
+                                        data-original-title="这里包含了 Typecho 相关的教程和笔记。">{{category.name}}
                                 </router-link >
-                                <span class="badge badge-secondary badge-pill">{{value}}</span>
+                                <span class="badge badge-secondary badge-pill">{{category.count}}</span>
                         </li>
                 </ul>
         </section>
@@ -18,7 +18,7 @@
         export default {
                 data() {
                         return {
-                                categories: []
+                                data: []
                         }
                 },
                 methods: {
@@ -27,7 +27,7 @@
                                 this.$http.get("/blog/category_detail").then(res => {
                                         console.log(res)
                                         if (res.data.code == "200") {
-                                                this.categories = res.data.result;
+                                                this.data = res.data.result;
                                         }
                                 }, error => {
 
@@ -40,5 +40,11 @@
                 },
                 updated() {
                 },
+                watch: {
+                        '$route' (to, from) {
+                            this.$router.go(0);
+                        }
+                    }
+                
         }
 </script>

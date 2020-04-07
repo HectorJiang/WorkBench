@@ -316,3 +316,9 @@ https://blog.csdn.net/weixin_43837268/article/details/86677868
       :key="index"
     >
 <el-badge>
+
+
+
+vue同一个路由不同参数,页面不跳转
+vue页面跳转：
+https://blog.csdn.net/Janus_lian/article/details/84965459

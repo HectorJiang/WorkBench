@@ -37,9 +37,16 @@
                                 })
                         }
                 },
+                
+
                 //生命周期函数：挂载完成
                 mounted() {
                         this.getData();
-                }
+                },
+                watch: {
+                        '$route' (to, from) {
+                            this.$router.go(0);
+                        }
+                    }
         }
 </script>

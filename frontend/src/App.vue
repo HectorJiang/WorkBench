@@ -45,7 +45,11 @@
   </div>
 </template>
 
-<style>
+<script>
+  export default {
 
+  }
+</script>
+<style>
 
 </style>

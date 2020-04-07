@@ -45,7 +45,7 @@ class ArticleView(View):
         req=json.loads(request.body.decode('utf-8'))
         dic={"title":req["title"],"content":req["content"],"category_id":req["category"],"blog_id":getrandom()}
         Blog.objects.create(**dic)
-        return JsonResponse({"code":"200","message":"success"})
+        return JsonResponse({"code":"200","message":"Add blog success"})
     
     
     # 删除单个文章
@@ -53,9 +53,18 @@ class ArticleView(View):
         try:
             req=json.loads(request.body.decode('utf-8'))
             Blog.objects.filter(blog_id=req["blog_id"]).delete()
-            return JsonResponse({"code":"200","message":"delete success"})
+            return JsonResponse({"code":"200","message":"Delete success"})
         except Exception as e:
-            return JsonResponse({"code":"500","message":str(e)})          
+            return JsonResponse({"code":"500","message":str(e)})
+        
+    # 修改单个文章
+    def put(self,request):
+        try:
+            req=json.loads(request.body.decode('utf-8'))
+            Blog.objects.filter(blog_id=req["blog_id"]).update(title=req["title"],content=req["content"],category_id=req["category_id"])
+            return JsonResponse({"code":"200","message":"Edit success"})
+        except Exception as e:
+            return JsonResponse({"code":"500","message":str(e)})                       
         
     
     
@@ -158,11 +167,12 @@ class CategoryDetailView(View):
         res={}
         res["code"]="200"
         with connection.cursor() as cursor:
-            cursor.execute('select name,count(1) from blog_blog a inner join blog_category b on a.category_id=b.id group by name')
+            cursor.execute('select a.category_id,name,count(1) from blog_blog a inner join blog_category b on a.category_id=b.id group by name')
             data = cursor.fetchall()
-            print(data)
-            res["result"]=dict(data)
-        return JsonResponse(res,safe=False)   
+            fields=["id","name","count"]
+            L=[list(e) for e in data]
+            res["result"]=[dict(zip(fields,i)) for i in L]
+        return JsonResponse(res,safe=False)     
 
     # def post(self, request):
     #     return HttpResponse('POST request!')
@@ -177,36 +187,32 @@ class ArchiveView(View):
         with connection.cursor() as cursor:
             cursor.execute('select DATE_FORMAT(created_time,"%Y/%m"),count(1) from blog_blog group by DATE_FORMAT(created_time,"%Y/%m")')
             data = cursor.fetchall()
-            print(data)
             res["result"]=dict(data)
         return JsonResponse(res,safe=False)      
        
 
 #  获取所有归档对应博客
 def archive_detail(request,year,month):
-    print(year,month)
     res={}
     res["code"]="200"
     print(year+"/"+month)
     with connection.cursor() as cursor:
-        cursor.execute('select id,blog_id,title,content,created_time from blog_blog where DATE_FORMAT(created_time,"%Y/%m")={}'.format(year+"/"+month))
+        cursor.execute('select id,blog_id,title,content,created_time from blog_blog where date_format(created_time,"%Y/%m")="{}"'.format(year+"/"+month))
         data = cursor.fetchall()
-        print(data)
         fields=["id","blog_id","title","content","created_time"]
         L=[list(e) for e in data]
         res["result"]=[dict(zip(fields,i)) for i in L]
         return JsonResponse(res,safe=False)   
 
 
-def simple_category(request,name):
+def simple_category(request,id):
     # 查询单个分类对应的文章
     res={}
     res["code"]="200"
     with connection.cursor() as cursor:
-        cursor.execute('select id,blog_id,title,content,created_time from blog_blog where DATE_FORMAT(created_time,"%Y/%m")={}'.format(year+"/"+month))
+        cursor.execute('select a.id,blog_id,title,content,a.created_time,name from blog_blog a inner join blog_category b on a.category_id=b.id where category_id={}'.format(id))
         data = cursor.fetchall()
-        print(data)
-        fields=["id","blog_id","title","content","created_time"]
+        fields=["id","blog_id","title","content","created_time","name"]
         L=[list(e) for e in data]
         res["result"]=[dict(zip(fields,i)) for i in L]
         return JsonResponse(res,safe=False)      

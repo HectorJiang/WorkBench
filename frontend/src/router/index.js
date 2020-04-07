@@ -23,17 +23,25 @@ const routes = [{
   path: '/article/:id',
   name: 'article_detail',
   component: ArticleDetail,
+  meta:{
+    title:"爱美食的Geek's Blog"
+  }
 }, {
-  path: '/category/:name',
+  path: '/category/:id',
   name: 'category',
   component: CategoryDetail,
+  meta:{
+    title:"爱美食的Geek's Blog"
+  }
 },{
   path: '/article/:year/:month',
   name: 'article_archive',
   component: ArchiveDetail,
+  meta:{
+    title:"爱美食的Geek's Blog"
+  }
 }
 ]
-
 const router = new VueRouter({
   routes
 })

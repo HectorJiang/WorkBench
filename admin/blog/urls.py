@@ -10,7 +10,7 @@ urlpatterns = [
     path('archive', views.ArchiveView.as_view(), name='archive'),
     path('category_detail', views.CategoryDetailView.as_view(), name='category_detail'),
     path('archive_detail/<str:year>/<str:month>', views.archive_detail, name='archive_detail'),
-    path('simple_category/<str:name>', views.simple_category, name='simple_category'),
+    path('simple_category/<int:id>', views.simple_category, name='simple_category'),
     
 ]
 

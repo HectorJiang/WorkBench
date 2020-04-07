@@ -35,7 +35,7 @@
             //请求数据
             getData() {
                 console.log(this.date)
-                this.$http.get("/blog/archive_detail",{date:this.year+this.month}).then(res => {
+                this.$http.get("/blog/archive_detail/"+this.year+"/"+this.month).then(res => {
                     console.log(res)
                     if (res.data.code == "200") {
                         this.articles = res.data.result;

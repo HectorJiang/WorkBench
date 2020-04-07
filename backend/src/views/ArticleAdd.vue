@@ -84,7 +84,11 @@
         this.$http.post("/blog/articles", obj).then(res => {
           console.log(res)
           if (res.data.code == "200") {
-
+            this.$message({
+              type: 'success',
+              message: res.data.message
+          });
+          this.$router.push('/article_list');
           }
         }, error => {
 
