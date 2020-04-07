@@ -8,7 +8,7 @@
             </el-table-column>
             <el-table-column  label="标题"" width="180">
                 <template slot-scope="scope">
-                    <a :href="'http://localhost:8002/#/article/'+scope.row.blog_id" target="_blank" class="buttonText">
+                    <a :href="'https://jiangyongxu.club/#/article/'+scope.row.blog_id" target="_blank" class="buttonText">
                         <div slot="reference" class="name-wrapper">
                             {{ scope.row.title }}
                         </div>
