@@ -14,7 +14,6 @@ class Blog(models.Model):
     updated_time=models.DateField(auto_now_add=True)
     deleted_time=models.DateField(auto_now_add=True)
     
-    
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()

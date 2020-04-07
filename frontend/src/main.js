@@ -9,7 +9,7 @@ import "./assets/index.scss";
 
 
 Vue.prototype.$http = axios;
-axios.defaults.baseURL = 'http://localhost:8000'
+axios.defaults.baseURL = 'https://jiangyongxu.club/api'
 
 // 修改页面标题，对应router.js中meta.title
 router.beforeEach((to,from,next)=>{
