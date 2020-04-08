@@ -35,3 +35,11 @@ docker-compose exec container_name bash
 一定要在虚拟环境中
 
 ALLOWED_HOSTS配置
+
+
+
+
+
+需要注意：
+
+每次搭建项目记得配置虚拟环境，因为项目迁移，或者是项目部署的时候，需要requirements.txt文件。
