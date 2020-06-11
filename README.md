@@ -1,3 +1,13 @@
+## 介绍
+
+![image-20200611220401122](D:\md_images\image-20200611220401122.png)
+
+ Based on vue's personal blog project, the backend uses django and golang, mainly used for blog publishing and project experience.基于vue的个人博客项目，后端采用了django与golang，主要用于博客发布，生活分享与项目体验.
+
+**体验：[https://jiangyongxu.club/#/article](https://jiangyongxu.club/#/article)**
+
+
+
 ## 已完成
 
 + 基本博客发布
