@@ -1,0 +1,35 @@
+{
+  "name": "demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.6.5",
+    "echarts": "^4.8.0",
+    "element-ui": "^2.13.2",
+    "highlight.js": "^9.18.1",
+    "vditor": "^3.2.12",
+    "vue": "^2.6.11",
+    "vue-meditor": "^2.1.1",
+    "vue-router": "^3.3.2",
+    "vue-simplemde": "^1.0.6",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-router": "~4.2.0",
+    "@vue/cli-plugin-vuex": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
