@@ -10,9 +10,9 @@ stop start retart只是针对已存在容器的操作。
 
 mysql容器执行sql语句：
 
-
 dockerfile编译
 注意最后的 . 一定要加，意思是默认路径是当前路径，不加会报错
+
 # 注意最后的 . 
 docker build -t image_name .
 # 也可以直接添加tag属性
@@ -43,3 +43,19 @@ ALLOWED_HOSTS配置
 需要注意：
 
 每次搭建项目记得配置虚拟环境，因为项目迁移，或者是项目部署的时候，需要requirements.txt文件。
+
+
+
+docker-compose logs nginx           查看nginx的日志 
+
+docker-compose logs -f nginx          查看nginx的实时日志
+
+docker-compose up -d nginx           构建建启动nignx容器
+
+docker-compose exec nginx bash      登录到nginx容器中
+
+docker-compose down               删除所有nginx容器,镜像
+
+docker-compose ps                  显示所有容器
+
+docker-compose restart nginx          重新启动nginx容器

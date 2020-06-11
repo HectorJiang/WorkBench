@@ -6,10 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/main.css'
 import axios from 'axios'
 import "./assets/index.scss";
+import $ from 'jquery'
+import 'bootstrap/dist/js/bootstrap.min'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
-
+Vue.use(ElementUI);
 Vue.prototype.$http = axios;
-axios.defaults.baseURL = 'https://jiangyongxu.club/api'
+axios.defaults.baseURL = 'https://jiangyongxu.club/api/blog'
 
 // 修改页面标题，对应router.js中meta.title
 router.beforeEach((to,from,next)=>{

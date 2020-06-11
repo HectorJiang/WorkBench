@@ -6,7 +6,7 @@
         </header>    
         <div class="card mb-3" v-for="article in articles">
             <router-link :to="{path:'/article/'+article.blog_id}">
-                <img src="../assets/img/demo1.jpg" class="card-img-top" alt="..." style="height: 200px;">
+                <!-- <img src="../assets/img/demo1.jpg" class="card-img-top" alt="..." style="height: 200px;"> -->
                 <div class="card-body">
                     <p class="card-text">{{article.title}}</p>
                     <p class="card-text"><small class="text-muted">{{article.updated_time}}</small>
@@ -35,7 +35,7 @@
             //请求数据
             getData() {
                 console.log(this.date)
-                this.$http.get("/blog/archive_detail/"+this.year+"/"+this.month).then(res => {
+                this.$http.get("/archive_detail/"+this.year+"/"+this.month).then(res => {
                     console.log(res)
                     if (res.data.code == "200") {
                         this.articles = res.data.result;

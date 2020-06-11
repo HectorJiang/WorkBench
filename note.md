@@ -322,3 +322,41 @@ https://blog.csdn.net/weixin_43837268/article/details/86677868
 vue同一个路由不同参数,页面不跳转
 vue页面跳转：
 https://blog.csdn.net/Janus_lian/article/details/84965459
+
+
+
+完整成功版vue-cli引入jquery bootstrap popper.js
+第一步：在项目文件夹中
+
+1，用npm或者cnpm安装 jquery bootstrap popper.js
+
+例如：cnpm i jquery -S (注意是大S 才能保存在package.json文件中)
+
+2，注意观察package.json文件里 要有类似这三项
+
+"bootstrap": "^4.1.3",
+"jquery": "^3.3.1",
+"popper.js": "^1.14.4",
+第二步：
+
+在build文件夹下webpack.base.conf.js文件中修改配置：
+
+1，添加：         const webpack = require('webpack');
+
+2，在module.exports里面添加plugins
+
+module.exports = {
+plugins: [
+new webpack.optimize.CommonsChunkPlugin('common'),
+new webpack.ProvidePlugin({
+$: 'jquery',
+jQuery: 'jquery',
+Popper: ['popper.js', 'default']
+})
+],
+第三步：在main.js中引入如下文件
+import $ from 'jquery'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min'
+ 
+接下来就可以使用bootstrap的class样式名了

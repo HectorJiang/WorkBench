@@ -4,10 +4,18 @@ import Article from "../views/Article.vue"
 import ArticleDetail from "../views/ArticleDetail.vue"
 import CategoryDetail from "../views/CategoryDetail.vue"
 import ArchiveDetail from "../views/ArchiveDetail.vue"
+import Home from "../views/Home.vue"
 
 Vue.use(VueRouter)
 
 const routes = [{
+  path: '/',
+  name: 'home',
+  component: Home,
+  meta:{
+    title:"爱美食的Geek's Blog"
+  }
+},{
   path: '/article',
   name: 'article',
   component: Article,

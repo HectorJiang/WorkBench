@@ -4,14 +4,16 @@
         <h4>博客信息</h4>
         <div class="personal-information pt-2">
             <div class="user">
-                <img src="https://www.misterma.com/img/avatar.jpg" alt="Hector Will的头像" class="rounded-circle avatar">
+                <img src="../assets/img/avatar.jpg" alt="Hector Will的头像" class="rounded-circle avatar">
                 <div class="p-2">
-                    <a class="user-name mt-2" target="_blank" href="https://www.misterma.com/">Hector
+                    <a class="user-name mt-2" target="_blank" href="">Hector
                         Will</a>
-                    <p class="introduction mt-1">人生之路，难免坎坷，但我执着。</p>
+                        <!-- https://www.misterma.com/ -->
+                    <!-- <p class="introduction mt-1">人生之路，难免坎坷，但我执着。</p> -->
+                    <p class="introduction mt-1">努力的意义在与,每天阳光与自由</p>
                 </div>
             </div>
-            <div class="website clearfix border-top">
+            <!-- <div class="website clearfix border-top">
                 <div class="info float-left border-right">
                     <p class="quantity">{{data.article_num}}</p>
                     文章数
@@ -24,7 +26,7 @@
                     <p class="quantity">{{data.comment_num}}天</p>
                     运行天数
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 </template>

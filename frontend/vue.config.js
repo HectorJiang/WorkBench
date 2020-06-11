@@ -1,4 +1,15 @@
+const webpack = require('webpack')
 module.exports = {
+    configureWebpack: {
+    plugins: [
+    new webpack.ProvidePlugin({
+        $:"jquery",
+        jQuery:"jquery",
+        "windows.jQuery":"jquery",
+        Popper: ["popper.js", "default"]
+        })
+    ]
+    },
     devServer: {
         port: 8002,
         host: "localhost",

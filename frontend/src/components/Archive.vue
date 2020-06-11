@@ -27,7 +27,7 @@
                 methods: {
                         //请求数据
                         getData() {
-                                this.$http.get("/blog/archive").then(res => {
+                                this.$http.get("/archive").then(res => {
                                         console.log(res)
                                         if (res.data.code == "200") {
                                                 this.archives = res.data.result;

@@ -10,18 +10,27 @@
         <div class="container">
           <!-- <a class="navbar-brand" href="#">Hector's Blog</a> -->
           <a class="navbar-brand" href="#">爱美食的Geek</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler border-0 px-0 collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="导航菜单">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <router-link class="nav-item nav-link" to="/">首页</router-link>
-              <router-link class="nav-item nav-link" to="/article">博客</router-link>
-              <router-link class="nav-item nav-link" to="/resource">工具箱</router-link>
-              <router-link class="nav-item nav-link" to="/space">个人空间</router-link>
-              <router-link class="nav-item nav-link" to="/message">留言板</router-link>
-            </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <router-link class="nav-item nav-link" to="/">首页</router-link>
+                </li>
+                <li class="nav-item ">
+                  <router-link class="nav-item nav-link" to="/article">博客</router-link>
+                </li>
+                <li class="nav-item ">
+                  <router-link class="nav-item nav-link" to="/resource">工具箱</router-link>
+                </li>
+                <li class="nav-item ">
+                  <router-link class="nav-item nav-link" to="/space">个人空间</router-link>
+                </li>                                          
+                <li class="nav-item ">
+                  <router-link class="nav-item nav-link" to="/message">留言板</router-link>
+                </li>                 
+              </ul>
           </div>
         </div>
       </nav>

@@ -24,7 +24,7 @@
                 methods: {
                         //请求数据
                         getData() {
-                                this.$http.get("/blog/category_detail").then(res => {
+                                this.$http.get("/category_detail").then(res => {
                                         console.log(res)
                                         if (res.data.code == "200") {
                                                 this.data = res.data.result;

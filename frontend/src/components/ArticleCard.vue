@@ -1,16 +1,30 @@
 <template>
     <div>
+        <div class="card mb-3">
+                <img src="../assets/img/demo1.jpg" class="card-img-top" alt="..." style="height: 224px; cursor:pointer">
+                <!-- <div class="card-body"> -->
+                    <!-- <h4 class="card-text">{{article.title}}</h4> -->
+                    <!-- <h4 class="card-text">每天都独自充满阳光</h4> -->
+                    <!-- <p class="card-text"><small class="text-muted">{{article.updated_time}}</small> -->
+                        <!-- <small class="text-muted">
+                            <i class="fas fa-calendar-alt"></i> {{article.created_time}}
+                        </small> -->
+                    <!-- </p> -->
+                <!-- </div> -->
+        </div>
         <div class="card mb-3" v-for="article in articles">
             <router-link :to="{path:'/article/'+article.blog_id}">
-                <img src="../assets/img/demo1.jpg" class="card-img-top" alt="..." style="height: 200px;">
+                <!-- <img src="../assets/img/demo1.jpg" class="card-img-top" alt="..." style="height: 200px;"> -->
                 <div class="card-body">
-                    <p class="card-text">{{article.title}}</p>
+                    <h4 class="card-text">{{article.title}}</h4>
                     <p class="card-text"><small class="text-muted">{{article.updated_time}}</small>
                         <small class="text-muted">
                             <i class="fas fa-calendar-alt"></i> {{article.created_time}}
                         </small>
+                        <!-- <el-tag></el-tag> -->
+                        <!-- <el-tag type="success">标签二</el-tag> -->
+                        <!-- <el-tag type="info">标签三</el-tag> -->
                     </p>
-                    </a>
                 </div>
             </router-link>
         </div>
@@ -28,7 +42,7 @@
         methods: {
             //请求数据
             getData() {
-                this.$http.get("/blog/articles").then(res => {
+                this.$http.get("/articles").then(res => {
                     console.log(res)
                     if (res.data.code == "200") {
                         this.articles = res.data.result;
