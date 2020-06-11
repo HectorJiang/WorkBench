@@ -1,6 +1,6 @@
 ## 介绍
 
-![image-20200611220401122](D:\md_images\image-20200611220401122.png)
+![logo](./images/screenshots/geek.png)
 
  Based on vue's personal blog project, the backend uses django and golang, mainly used for blog publishing and project experience.基于vue的个人博客项目，后端采用了django与golang，主要用于博客发布，生活分享与项目体验.
 
@@ -12,7 +12,7 @@
 
 + 基本博客发布
 
-![image-20200611214838952](./images/screen1.jpg)
+![image-20200611214838952](./images/screenshots/screen1.jpg)
 
 ## 计划功能
 
@@ -42,7 +42,7 @@
 + 工具箱
 
   ```
-  分享工具等
+  分享工具
   ```
 
 + 工作台：一些在线操作的工具（考虑与工具箱结合）
@@ -63,4 +63,3 @@
 ## 总体优化
 
 + 网站安全优化
-
