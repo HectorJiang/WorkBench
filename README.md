@@ -1,12 +1,5 @@
 ## 介绍
-
-<p align="center">
-
-<img alt="logo" src="./images/screenshots/geek.png"/></p> 
-
-
-
-
+<p><img alt="logo" src="./images/screenshots/geek.png"/></p>
 
  Based on vue's personal blog project, the backend uses django and golang, mainly used for blog publishing and project experience.基于vue的个人博客项目，后端采用了django与golang，主要用于博客发布，生活分享与项目体验.
 
