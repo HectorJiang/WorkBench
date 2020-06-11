@@ -14,7 +14,6 @@
     "highlight.js": "^9.18.1",
     "vditor": "^3.2.12",
     "vue": "^2.6.11",
-    "vue-meditor": "^2.1.1",
     "vue-router": "^3.3.2",
     "vuex": "^3.4.0"
   },
