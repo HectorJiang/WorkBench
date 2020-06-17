@@ -6,6 +6,14 @@
 **体验：[https://jiangyongxu.club/#/article](https://jiangyongxu.club/#/article)**
 
 
+## 依赖
++ golang,gin
++ vue,vue-cli4.0,typescript
++ python django
++ redis
++ nginx
++ java,hadoop
+
 
 ## 已完成
 
@@ -62,3 +70,4 @@
 ## 总体优化
 
 + 网站安全优化
+
