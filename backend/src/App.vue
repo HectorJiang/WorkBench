@@ -137,4 +137,6 @@ body {
   margin: 0;
   padding-left: 0;
 }
+.el-footer{
+}
 </style>
