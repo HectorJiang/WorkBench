@@ -96,4 +96,8 @@ export default {};
 </script>
 
 <style>
+header .navbar .search-btn-light {
+    background: #f8f8f8;
+    border: 1px solid #d3d3d3;
+}
 </style>
