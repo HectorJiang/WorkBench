@@ -19,8 +19,10 @@
 
 + 基本博客发布
 
-![image-20200611214838952](./images/screenshots/screen1.jpg)
+![image-20200611214838952](./images/screenshots/frontend.jpg)
 
++ 后台管理
+![backend](./images/screenshots/backend.jpg)
 ## 计划功能
 
 + 博客图片发布
