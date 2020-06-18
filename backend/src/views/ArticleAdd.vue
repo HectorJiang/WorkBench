@@ -1,9 +1,9 @@
 <template>
   <!-- <div id="app"> -->
-  <div class="">
+  <el-card class="box-card card">
     <el-form :inline="true" :model="formInline" class="demo-form-inline">
       <el-form-item label="标题">
-        <el-input v-model="formInline.title" placeholder="标题""></el-input>
+        <el-input v-model="formInline.title" placeholder="标题"></el-input>
           </el-form-item>
           <el-form-item label=" 分类">
           <el-select v-model="formInline.category" placeholder="分类">
@@ -16,7 +16,7 @@
       </el-form-item>
     </el-form>
     <div id="vditor" style="height: 480px;background-color: #f6f8fa"></div>
-  </div>
+  </el-card>
 
   <!-- <button @click="getMarkdownText">获取markdown内容</button>
       <button @click="getHtmlText">获取html内容</button> -->
@@ -113,11 +113,4 @@
   };
 </script>
 <style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
 </style>

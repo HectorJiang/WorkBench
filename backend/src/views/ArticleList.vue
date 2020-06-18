@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <el-table :data="tableData" style="width: 100%">
-            <el-table-column type="selection" width="55">
+    <el-card class="box-card card">
+        <el-table :data="tableData">
+            <el-table-column type="selection">
             </el-table-column>
             <el-table-column prop="created_time" label="日期" width="180" sortable :filters="dataList"
                 :filter-method="filterHandler">
@@ -29,7 +29,7 @@
                 </template>
             </el-table-column>
         </el-table>
-    </div>
+    </el-card>
 </template>
 <script>
     import axios from 'axios'
@@ -100,7 +100,7 @@
 </script>
 
 <style>
-    router-link{
-        margin: 5px;
-    }
+  .card {
+    width: 100%!important;
+  }
 </style>

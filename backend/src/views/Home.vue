@@ -1,25 +1,21 @@
 <template>
   <div class="home">
     <el-row :gutter="20">
-      <!-- 循环加载图片 -->
-      <el-col :xs="24" :sm="12" :md="6" v-for="(item,i) in items" :key="i">
-        <el-image :src="item"></el-image>
-      </el-col>
-      <!-- 展示图表 -->
-      <el-col :span="24">
+  <el-col  :sm="24" :md="12" :lg="12" >
+    <el-card class="box-card card">
         <div id="chart" style="width:100%;height:300px;"></div>
-      </el-col>
-      <el-col :span="24">
-        <div id="chart2" style="width:100%;height:300px;"></div>
-      </el-col>
-
-    </el-row>
+    </el-card>
+  </el-col>
+  <el-col  :sm="24" :md="12" :lg="12">
+    <el-card class="box-card card">
+        <div id="chart1" style="width:100%;height:300px;"></div>
+    </el-card>
+  </el-col>
+</el-row>
   </div>
 </template>
 
 <script>
-  // @ is an alias to /src
-
   export default {
     name: 'Home',
     data() {
@@ -35,10 +31,11 @@
       init() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = this.$echarts.init(document.getElementById('chart'));
-        // 指定图表的配置项和数据
+        var myChart1 = this.$echarts.init(document.getElementById('chart1'));
+                // 指定图表的配置项和数据
         var option = {
           title: {
-            text: 'ECharts 入门示例'
+            text: '文章发表数量'
           },
           tooltip: {},
           legend: {
@@ -54,10 +51,19 @@
             data: [5, 20, 36, 10, 10, 20]
           }]
         };
-
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        myChart1.setOption(option);
       }
     }
   }
 </script>
+
+<style>
+  /* .home{
+  }
+  .card {
+    width: 100%!important;
+    margin-right:10px;
+  } */
+</style>
