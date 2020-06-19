@@ -7,6 +7,8 @@ import ArticleList from "../views/ArticleList.vue"
 import ArticleCategory from "../views/ArticleCategory.vue"
 import ArticleEdit from "../views/ArticleEdit.vue"
 import Login from "../views/Login.vue"
+import Share from "../views/Share.vue"
+import Personal from "../views/Personal"
 
 Vue.use(VueRouter)
 
@@ -68,6 +70,22 @@ const routes = [{
         path: '/article_category',
         name: 'article_category',
         component: ArticleCategory,
+        meta: {
+            title: "爱美食的Geek's 后台"
+        }
+    },
+    {
+        path: '/share',
+        name: 'share',
+        component: Share,
+        meta: {
+            title: "爱美食的Geek's 后台"
+        }
+    },
+    {
+        path: '/personal',
+        name: 'personal',
+        component: Personal,
         meta: {
             title: "爱美食的Geek's 后台"
         }

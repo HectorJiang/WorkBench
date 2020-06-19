@@ -25,24 +25,32 @@
               <el-menu-item index="/article_add">博客撰写</el-menu-item>
               <el-menu-item index="/article_category">博客分类</el-menu-item>
             </el-submenu>
+
             <el-submenu index="2">
-              <template slot="title">
-                <i class="el-icon-s-cooperation"></i>
-                <span>资源管理</span>
-              </template>
-              <el-menu-item index="/resource">资源列表</el-menu-item>
-              <el-menu-item index="/resource_add">资源添加</el-menu-item>
-              <el-menu-item index="/resource_category">资源分类</el-menu-item>
-            </el-submenu>
-            <el-submenu index="3">
               <template slot="title">
                 <i class="el-icon-video-camera-solid"></i>
                 <span>个人空间</span>
               </template>
-              <el-menu-item index="/resume">个人简历</el-menu-item>
-              <el-menu-item index="/history_project">历史项目</el-menu-item>
-              <el-menu-item index="/life">记录生活</el-menu-item>
+              <el-menu-item index="/personal">空间管理</el-menu-item>
+              <!-- <el-menu-item index="/history_project">历史项目</el-menu-item>
+              <el-menu-item index="/life">记录生活</el-menu-item> -->
+            </el-submenu>         
+
+            <el-submenu index="3">
+              <template slot="title">
+                <i class="el-icon-video-camera-solid"></i>
+                <span>应用程序</span>
+              </template>
+              <el-menu-item index="/application">程序列表</el-menu-item>
+            </el-submenu>               
+            <el-submenu index="4">
+              <template slot="title">
+                <i class="el-icon-s-cooperation"></i>
+                <span>文件共享</span>
+              </template>
+              <el-menu-item index="/share">文件列表</el-menu-item>
             </el-submenu>
+
             <el-menu-item index="/setting">
               <i class="el-icon-s-tools"></i>
               <span slot="title">系统设置</span>

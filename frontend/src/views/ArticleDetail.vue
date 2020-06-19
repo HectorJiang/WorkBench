@@ -16,7 +16,7 @@
                 </li>
                 <li class="d-flex justify-content-between align-items-center border-bottom">
                     标题三
-                </li>                                
+                </li>
             </ul>
         </section>
     </div>
@@ -35,9 +35,9 @@ export default {
 </script>
 
 <style>
-.content{
-    top:86px;
-    position:fixed;
-    width:350px;
+.content {
+    top: 86px;
+    position: fixed;
+    width: 350px;
 }
 </style>
