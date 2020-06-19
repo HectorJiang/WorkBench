@@ -19,10 +19,12 @@
 
 + 基本博客发布
 
-![image-20200611214838952](./images/screenshots/frontend.jpg)
+![frontedn](./images/screenshots/frontend.jpg)
 
 + 后台管理
-![backend](./images/screenshots/backend.jpg)
+
+![backend](./images/screenshots/backend1.jpg)
+![backend](./images/screenshots/backend2.jpg)
 ## 计划功能
 
 + 博客图片发布
