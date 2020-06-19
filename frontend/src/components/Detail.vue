@@ -114,6 +114,9 @@
                   enable: false
                 },
                 anchor: true,
+                markdown:{
+                    toc:true,
+                }
               });
         }
     }

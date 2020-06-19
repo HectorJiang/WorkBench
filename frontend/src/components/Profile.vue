@@ -4,7 +4,8 @@
         <h4>博客信息</h4>
         <div class="personal-information pt-2">
             <div class="user">
-                <img src="../assets/img/avatar.jpg" alt="Hector Will的头像" class="rounded-circle avatar">
+                <!-- class rounded-circle -->
+                <img src="../assets/img/avatar.jpg" alt="Hector Will的头像" class="avatar">
                 <div class="p-2">
                     <a class="user-name mt-2" target="_blank" href="">Hector
                         Will</a>

@@ -1,19 +1,2 @@
-# demo2
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 博客详情页
++ 如果有目录则会显示侧边栏，如果没有将不会显示；
