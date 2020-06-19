@@ -19,6 +19,16 @@
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">一款智能的定位小程序</h5>
+                  <p
+                    class="card-text"
+                  >With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+                            
             </div>
             <div class="col-sm-6">
               <div class="card">
@@ -30,6 +40,15 @@
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">一款智能的定位小程序</h5>
+                  <p
+                    class="card-text"
+                  >With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>              
             </div>
           </div>
         </article>
