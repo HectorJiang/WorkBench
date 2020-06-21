@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'centos'
+  vmImage: 'centos:lastest'
 
 steps:
 - task: NodeTool@0
