@@ -1,5 +1,15 @@
 ## 介绍
-<p align="center"><img alt="logo" src="./images/screenshots/geek.png"/></p>
+<p align="center">
+	<a href="jiangyongxu.club"><img alt="logo" src="./images/screenshots/geek.png"/></a>
+	<h3 align="center">WorkBench</h3>
+	<p align="center">WorkBench is a smart work place.</p>
+</p>
+
+
+[![Build Status](https://dev.azure.com/1830500370/workbench/_apis/build/status/Frontend?branchName=master)](https://dev.azure.com/1830500370/workbench/_build/latest?definitionId=10&branchName=master)
+![GitHub](https://img.shields.io/github/license/hectorwill/workbench)
+
+------
 
  Based on vue's personal blog project, the backend uses django and golang, mainly used for blog publishing and project experience.基于vue的个人博客项目，后端采用了django与golang，主要用于博客发布，生活分享与项目体验.
 
