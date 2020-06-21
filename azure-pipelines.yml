@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'centos:lastest'
+  vmImage: 'ubuntu:lastest'
 
 steps:
 - task: NodeTool@0
@@ -16,6 +16,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    cd frontend
     npm install
     npm run build
   displayName: 'npm install and build'
