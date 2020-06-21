@@ -9,7 +9,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <!-- <a class="navbar-brand" href="#">Hector's Blog</a> -->
-          <a class="navbar-brand" href="#">爱美食的Geek</a>
+          <a class="navbar-brand" href="#">WorkBench</a>
           <button
             class="navbar-toggler border-0 px-0 collapsed"
             type="button"
