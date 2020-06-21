@@ -118,7 +118,7 @@ export default {
         collapseStatus() {
             this.collapseBtnClick = this.isCollapse;
             this.isCollapse = !this.isCollapse;
-            this.isCollapse == true ? (this.logo = "HE") : (this.logo = "HECTOR");
+            this.isCollapse == true ? (this.logo = "WB") : (this.logo = "WorkBench");
         },
         fullScreen() {
             screenfull.toggle();
