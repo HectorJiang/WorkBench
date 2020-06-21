@@ -1,6 +1,6 @@
 ## 介绍
 <p align="center">
-	<a href="jiangyongxu.club"><img alt="logo" src="./images/screenshots/geek.png"/></a>
+	<a href="jiangyongxu.club"><img alt="logo" src="./images/logo/logo1.jpg"/></a>
 	<h3 align="center">WorkBench</h3>
 	<p align="center">WorkBench is a smart work place.</p>
 </p>
