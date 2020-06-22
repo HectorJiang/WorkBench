@@ -1,7 +1,6 @@
 <p align="center">
 	<a href="jiangyongxu.club"><img alt="logo" src="./images/logo/logo1.jpg"/></a>
-	<h3 align="center">WorkBench</h3>
-	<p align="center">WorkBench is a smart work place.</p>
+	<h3 align="center">WorkBench is a smart work place.</h3>
 </p>
 
 
@@ -9,8 +8,6 @@
 ![GitHub](https://img.shields.io/github/license/hectorwill/workbench)
 
 ------
-
- Based on vue's personal blog project, the backend uses django and golang, mainly used for blog publishing and project experience.基于vue的个人博客项目，后端采用了django与golang，主要用于博客发布，生活分享与项目体验.
 
 **体验：[https://jiangyongxu.club/#/article](https://jiangyongxu.club/#/article)**
 
