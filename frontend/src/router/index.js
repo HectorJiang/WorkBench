@@ -15,14 +15,14 @@ const routes = [{
         name: 'home',
         component: Home,
         meta: {
-            title: "爱美食的Geek's Blog"
+            title: "Hector'Blog"
         }
     }, {
         path: '/article',
         name: 'article',
         component: Article,
         meta: {
-            title: "爱美食的Geek's Blog"
+            title: "Hector'Blog"
         }
         // children: [{
         //   path: ':id',
@@ -34,21 +34,21 @@ const routes = [{
         name: 'article_detail',
         component: ArticleDetail,
         meta: {
-            title: "爱美食的Geek's Blog"
+            title: "Hector'Blog"
         }
     }, {
         path: '/category/:id',
         name: 'category',
         component: CategoryDetail,
         meta: {
-            title: "爱美食的Geek's Blog"
+            title: "Hector'Blog"
         }
     }, {
         path: '/article/:year/:month',
         name: 'article_archive',
         component: ArchiveDetail,
         meta: {
-            title: "爱美食的Geek's Blog"
+            title: "Hector'Blog"
         }
     },
     {
@@ -56,7 +56,7 @@ const routes = [{
         name: 'applicatoin',
         component: Application,
         meta: {
-            title: "爱美食的Geek's Blog"
+            title: "Hector'Blog"
         }
     },
     {
@@ -64,7 +64,7 @@ const routes = [{
         name: 'share',
         component: Share,
         meta: {
-            title: "爱美食的Geek's Blog"
+            title: "Hector'Blog"
         }
     },
     {
@@ -72,11 +72,12 @@ const routes = [{
         name: 'personal',
         component: Personal,
         meta: {
-            title: "爱美食的Geek's Blog"
+            title: "Hector'Blog"
         }
     }
 ]
 const router = new VueRouter({
+    mode: 'history',
     routes
 })
 
