@@ -1,5 +1,5 @@
 <p align="center">
-	<a href="jiangyongxu.club"><img alt="logo" src="./images/logo/logo1.jpg"/></a>
+	<a href="jiangyongxu.club"><img alt="logo" src="images/logo/logo1.jpg"/></a>
 	<h3 align="center">WorkBench is a smart work place.</h3>
 </p>
 
