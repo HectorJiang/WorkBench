@@ -10,10 +10,13 @@ import $ from 'jquery'
 import 'bootstrap/dist/js/bootstrap.min'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import Clipboard from 'v-clipboard'
 
 Vue.use(ElementUI);
 Vue.prototype.$http = axios;
 axios.defaults.baseURL = 'https://jiangyongxu.club/api/blog'
+// 复制组件
+Vue.use(Clipboard)
 
 // 修改页面标题，对应router.js中meta.title
 router.beforeEach((to,from,next)=>{

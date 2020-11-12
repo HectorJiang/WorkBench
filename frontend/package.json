@@ -16,6 +16,7 @@
     "popper.js": "^1.16.1",
     "prismjs": "^1.21.0",
     "screenfull": "^5.0.2",
+    "v-clipboard": "^2.2.3",
     "vditor": "^3.3.2",
     "vue": "^2.6.11",
     "vue-pdf": "^4.1.0",

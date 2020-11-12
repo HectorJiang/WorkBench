@@ -16,7 +16,7 @@
                   <p
                     class="card-text"
                   >With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
               </div>
               <div class="card">
@@ -25,7 +25,7 @@
                   <p
                     class="card-text"
                   >With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
               </div>
                             
@@ -37,7 +37,7 @@
                   <p
                     class="card-text"
                   >With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
               </div>
               <div class="card">
@@ -46,7 +46,7 @@
                   <p
                     class="card-text"
                   >With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
               </div>              
             </div>
@@ -104,3 +104,10 @@ export default {
   // }
 };
 </script>
+
+<style scoped>
+.card{
+  cursor: pointer;
+  margin:10px 10px;
+}
+</style>
