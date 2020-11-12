@@ -38,6 +38,7 @@
                         <span>应用程序</span>
                     </template>
                     <el-menu-item index="/application">程序列表</el-menu-item>
+                    <el-menu-item index="/server">远程服务器</el-menu-item>
                 </el-submenu>
                 <el-submenu index="4">
                     <template slot="title">
@@ -80,7 +81,9 @@
                 <el-badge :value="12" class="item right">
                     <el-button size="small" icon="el-icon-message" class="btn-message"></el-button>
                 </el-badge>
-                <el-button plain @click="fullScreen" icon="el-icon-rank" class="btn-fullscreen right"></el-button>
+                <el-badge>
+                    <el-button size="small" @click="fullScreen" icon="el-icon-rank" class="btn-fullscreen"></el-button>
+                </el-badge>                
 
             </el-header>
             <el-main>
@@ -139,7 +142,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /*伪元素是行内元素 正常浏览器清除浮动方法*/
 /* .clearfix:after {
     content: "";
@@ -148,20 +151,6 @@ export default {
     clear: both;
     visibility: hidden;
 } */
-
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-html,
-body {
-    background: #f3f6f8;
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-}
-
 .el-container .el-header {
     height: 60px;
     /* line-height: 60px; */
@@ -215,10 +204,10 @@ body {
     font-size: 20px !important;
     border-radius: 4px;
     background-color: #fff;
-    float: right;
-    margin-top: 40px;
-    line-height: 60px;
-    height: 60px;
+    /* float: right; */
+    /* margin-top: 40px; */
+    /* line-height: 60px; */
+    /* height: 60px; */
 }
 
 .btn-message {
