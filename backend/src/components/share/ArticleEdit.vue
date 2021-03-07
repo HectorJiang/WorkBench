@@ -7,7 +7,7 @@
                 <el-breadcrumb-item>博客编辑</el-breadcrumb-item>
             </el-breadcrumb>
             <el-form-item label="标题">
-                <el-input v-model="formInline.title" placeholder="标题""></el-input>
+                <el-input v-model="formInline.title" placeholder="标题"></el-input>
             </el-form-item>
             <el-form-item label=" 分类">
                     <el-select v-model="formInline.category_id" placeholder="分类">
@@ -29,7 +29,8 @@
 </template>
 
 <script>
-    import Vditor from "vditor";
+import Vditor from 'vditor'
+import "vditor/src/assets/scss/index.scss"
     export default {
         name: "ArticleEdit",
         data() {
@@ -146,6 +147,5 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color: #2c3e50;
-        margin-top: 60px;
     }
 </style>

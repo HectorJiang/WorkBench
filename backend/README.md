@@ -1,10 +1,24 @@
-## 文件共享
-+ 权限为所有人可见，加密，一部分人可见
+# workbench
 
-## 应用程序
-+ URL连接管理，子页面管理，子页面的权限管理，程序自动发布，自动部署，CD/CI等功能，其中权限管理同文件共享
+## Project setup
+```
+npm install
+```
 
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-## 待解决
-+ 首页LOGO文字变化加上变化效果
+### Compiles and minifies for production
+```
+npm run build
+```
 
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

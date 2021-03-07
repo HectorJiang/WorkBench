@@ -17,11 +17,11 @@
 
 <script>
   export default {
-    name: 'Home',
+    name: 'Index',
     data() {
       return {
         //加载图片
-        items: [require("../assets/logo.png"), require("../assets/logo.png")]
+        items: [require("../../assets/logo.png"), require("../../assets/logo.png")]
       }
     },
     mounted() {
@@ -30,8 +30,8 @@
     methods: {
       init() {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = this.$echarts.init(document.getElementById('chart'));
-        var myChart1 = this.$echarts.init(document.getElementById('chart1'));
+        // var myChart = this.$echarts.init(document.getElementById('chart'));
+        // var myChart1 = this.$echarts.init(document.getElementById('chart1'));
                 // 指定图表的配置项和数据
         var option = {
           title: {
@@ -52,8 +52,8 @@
           }]
         };
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        myChart1.setOption(option);
+        // myChart.setOption(option);
+        // myChart1.setOption(option);
       }
     }
   }

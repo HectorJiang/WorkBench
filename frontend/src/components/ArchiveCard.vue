@@ -23,31 +23,32 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                articles: [],
-                year: this.$route.params.year,
-                month: this.$route.params.month,
-            }
+export default {
+  data() {
+    return {
+      articles: [],
+      year: this.$route.params.year,
+      month: this.$route.params.month,
+    };
+  },
+  methods: {
+    //请求数据
+    getData() {
+      console.log(this.date);
+      this.$http.get("/archive_detail/" + this.year + "/" + this.month).then(
+        (res) => {
+          console.log(res);
+          if (res.data.code == "200") {
+            this.articles = res.data.result;
+          }
         },
-        methods: {
-            //请求数据
-            getData() {
-                console.log(this.date)
-                this.$http.get("/archive_detail/"+this.year+"/"+this.month).then(res => {
-                    console.log(res)
-                    if (res.data.code == "200") {
-                        this.articles = res.data.result;
-                    }
-                }, error => {
-
-                })
-            }
-        },
-        //生命周期函数：挂载完成
-        mounted() {
-            this.getData();
-        }
-    }
+        (error) => {}
+      );
+    },
+  },
+  //生命周期函数：挂载完成
+  mounted() {
+    this.getData();
+  },
+};
 </script>

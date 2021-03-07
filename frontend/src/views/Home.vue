@@ -13,7 +13,8 @@
                 <!-- <a class="primary_btn tr-bg" href="#"><span>Get CV</span></a> -->
               </div>
             </div>
-            <iframe
+            联系方式 个人简介 个人简历
+            <!-- <iframe
               frameborder="no"
               border="0"
               marginwidth="0"
@@ -21,7 +22,7 @@
               width="330"
               height="86"
               src="//music.163.com/outchain/player?type=2&id=4010799&auto=1&height=66"
-            ></iframe>
+            ></iframe> -->
           </div>
           <div class="col-lg-5">
             <div class="home_right_img">
@@ -32,20 +33,24 @@
         </div>
       </div>
     </div>
-    <!-- <h3 style="text-align:center;">首页还没想好写什么,那就先放一组可爱的表情包吧</h3>
-        <div style="width: 500px;margin:0 auto;">
-            <img src="../assets/img/demo3.jpg" style="width:400px;height:400px;">
-    </div>-->
   </div>
 </template>
 <script>
 export default {
-  name: "Home"
+  name: "Home",
 };
 </script>
 
 <style>
-.banner_content{
-	padding:10px;
+.banner_content {
+  padding: 10px;
+}
+
+.home_right_img {
+  width: 200px;
+}
+.avatar {
+  width: 100%;
+  height: 100%;
 }
 </style>

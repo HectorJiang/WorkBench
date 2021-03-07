@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>geek.ico">
-    <title>
-        爱美食的Geek's后台
-    </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>logo.ico">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
 </head>
+<style>
+  * {
+    margin: 0;
+  }
+
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+  }
+</style>
 
 <body>
-    <div id="app"></div>
+  <div id="app"></div>
 </body>
 
 </html>

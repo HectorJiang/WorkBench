@@ -1,28 +1,17 @@
-const webpack = require('webpack')
 module.exports = {
-    configureWebpack: {
-    plugins: [
-    new webpack.ProvidePlugin({
-        $:"jquery",
-        jQuery:"jquery",
-        "windows.jQuery":"jquery",
-        Popper: ["popper.js", "default"]
-        })
-    ]
-    },
     devServer: {
-        port: 8002,
+        port: 8003,
         host: "localhost",
         open: true, //配置浏览器自动打开
-        // proxy: {
-        //     '/api': {
-        //         target: 'http://localhost:8000',
-        //         changeOrigin:true,
-        //         pathRewrite:{
-        //             '^/api':''
-        //         }
-        //       }
-        // } //配置代理，跨域使用
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8000',
+                changeOrigin: true,
+                // pathRewrite:{
+                //     '^/api':''
+                // }
+            }
+        } //配置代理，跨域使用
     },
     publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
 }

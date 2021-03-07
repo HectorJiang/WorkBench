@@ -5,11 +5,10 @@
             <el-button style="float: right;" size="small" type="primary" @click="open">添加</el-button>
         </div>
         <el-table :data="tableData" style="text-align:center;">
-            <el-table-column label="分类""
-          width=" 180">
+            <el-table-column label="分类" width=" 180">
                 <template slot-scope="scope">
                     <div slot="reference" class="name-wrapper">
-                        <el-tag size="medium">{{ scope.row.name }}</el-tag>
+                        <el-tag size="medium">{{ scope.row.category_name }}</el-tag>
                     </div>
                 </template>
             </el-table-column>
@@ -37,10 +36,11 @@
         methods: {
             //请求数据
             getData(){
-                this.$http.get("/blog/catetory").then(res => {
+                this.$http.get("/api/v1/admin/category").then(res => {
                     console.log(res)
-                    if (res.data.code == "200") {
-                        this.tableData = res.data.result;
+                    if (res.data.status == "200") {
+                        this.tableData = res.data.data
+                        // this.tableData = res.data.result;
                     }
                 }, error => {
 
@@ -48,6 +48,7 @@
             },
             //编辑分类
             handleEdit(index, row) {
+                console.log(index,row)
                 this.$prompt('请输入分类', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
@@ -55,9 +56,9 @@
                     //inputErrorMessage: '邮箱格式不正确'
                 }).then(({ value }) => {
                     //发送请求
-                    this.$http.put("/blog/catetory", { "newname": value,"oldname":row.name }).then(res => {
+                    this.$http.put("/api/v1/admin/category/"+row.category_id, { "category_name":value }).then(res => {
                         console.log(res)
-                        if (res.data.code != "200") {
+                        if (res.data.status != "200") {
                             this.$message({
                                 type: 'error',
                                 message: res.data.message
@@ -85,9 +86,9 @@
             },
             //删除分类
             handleDelete(index, row) {
-                this.$http.delete("/blog/catetory",{data:{"name":row.name}}).then(res => {
+                this.$http.delete("/api/v1/admin/category/"+row.category_id).then(res => {
                     console.log(res)
-                    if(res.data.code!="200"){
+                    if(res.data.status!="200"){
                         this.$message({
                             type: 'error',
                             message: res.data.message
@@ -116,9 +117,9 @@
                     //inputErrorMessage: '邮箱格式不正确'
                 }).then(({ value }) => {
                     //发送请求
-                    this.$http.post("/blog/catetory", { "name": value }).then(res => {
+                    this.$http.post("/api/v1/admin/category/add", { "category_name": value }).then(res => {
                         console.log(res)
-                        if (res.data.code != "200") {
+                        if (res.data.status != "200") {
                             this.$message({
                                 type: 'error',
                                 message: res.data.message

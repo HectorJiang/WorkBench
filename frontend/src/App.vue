@@ -27,33 +27,46 @@
                 <router-link class="nav-item nav-link" to="/">首页</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-item nav-link" to="/article">博客</router-link>
+                <router-link class="nav-item nav-link" to="/article"
+                  >博客</router-link
+                >
               </li>
               <!-- <li class="nav-item">
                 <router-link class="nav-item nav-link" to="/resource">工具箱</router-link>
               </li> -->
+              <!-- <li class="nav-item">
+                <router-link class="nav-item nav-link" to="/personal"
+                  >个人空间</router-link
+                >
+              </li> -->
               <li class="nav-item">
-                <router-link class="nav-item nav-link" to="/personal">个人空间</router-link>
+                <router-link class="nav-item nav-link" to="/application"
+                  >应用程序</router-link
+                >
               </li>
               <li class="nav-item">
-                <router-link class="nav-item nav-link" to="/application">应用程序</router-link>
+                <router-link class="nav-item nav-link" to="/share"
+                  >文件共享</router-link
+                >
               </li>
-              <li class="nav-item">
-                <router-link class="nav-item nav-link" to="/share">文件共享</router-link>
-              </li>              
               <!-- <li class="nav-item">
                              <router-link class="nav-item nav-link" to="/message">留言板</router-link>
               </li>-->
             </ul>
 
-            <form class="form-inline search-form" action method="post" role="search">
+            <form
+              class="form-inline search-form"
+              action
+              method="post"
+              role="search"
+            >
               <div class="input-group">
                 <input
                   data-url
                   class="border-right-0 form-control form-control-md search-input"
                   type="text"
-                  placeholder="搜索博客"
-                  aria-label="搜索"
+                  placeholder="Search"
+                  aria-label="Search"
                   required="required"
                   name="s"
                 />
@@ -66,7 +79,9 @@
                     data-toggle="tooltip"
                     data-placement="bottom"
                     data-original-title="搜索"
-                  >搜索</button>
+                  >
+                    搜索
+                  </button>
                 </div>
               </div>
             </form>
@@ -82,10 +97,20 @@
     <footer>
       <div class="container">
         <nav>
-          <span>©2020 Hector Will's Blog</span>
-          <!-- <a href="https://www.misterma.com/sitemap.xml" target="_blank">sitemap</a> -->
+          <a href="https://github.com/hectorjiang">©2020 Hector Jiang</a><br />
+          <a href="https://beian.miit.gov.cn/" target="_blank"
+            >皖ICP备19001851号-2</a
+          ><br />
+          <a
+            href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"
+            >本网站由
+            <img
+              style="vertical-align: middle; height: 30px; margin-top: -4px"
+              src="./assets/img/youpai.png"
+            />
+            提供CDN加速/云存储服务
+          </a>
         </nav>
-        <!-- <span>Powered by <a href="http://www.typecho.org/" target="_blank">Typecho</a> Theme by <a href="https://www.misterma.com/archives/812/" target="_blank">MWordStar</a></span> -->
       </div>
     </footer>
   </div>
@@ -97,7 +122,12 @@ export default {};
 
 <style>
 header .navbar .search-btn-light {
-    background: #f8f8f8;
-    border: 1px solid #d3d3d3;
+  background: #f8f8f8;
+  border: 1px solid #d3d3d3;
+}
+
+footer {
+  position: relative;
+  bottom: 0px;
 }
 </style>

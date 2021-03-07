@@ -77,8 +77,6 @@ export default {
                         })
                     }
                 }
-            }, error => {
-
             })
         },
         filterTag(value, row) {
