@@ -9,7 +9,8 @@
         <Header />
       </el-header>
       <el-main>
-        <router-view v-if="isRouterAlive" />
+        <!-- v-if="isRouterAlive" -->
+        <router-view />
       </el-main>
       <el-footer>
         <Footer />
@@ -17,7 +18,6 @@
     </el-container>
   </el-container>
 </template>
-
 <script>
 import Aside from "../components/admin/Aside";
 import Header from "../components/admin/Header";

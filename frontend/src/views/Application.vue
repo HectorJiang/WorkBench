@@ -13,42 +13,45 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">一款智能的定位小程序</h5>
-                  <p
-                    class="card-text"
-                  >With supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">一款智能的定位小程序</h5>
-                  <p
-                    class="card-text"
-                  >With supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
               </div>
-                            
             </div>
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">一款智能的定位小程序</h5>
-                  <p
-                    class="card-text"
-                  >With supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">一款智能的定位小程序</h5>
-                  <p
-                    class="card-text"
-                  >With supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
-              </div>              
+              </div>
             </div>
           </div>
         </article>
@@ -68,9 +71,9 @@ export default {
   data() {
     return {
       id: this.$route.params.id,
-      article: ""
+      article: "",
     };
-  }
+  },
   // methods: {
   //     //请求数据
   //     getData() {
@@ -106,8 +109,8 @@ export default {
 </script>
 
 <style scoped>
-.card{
+.card {
   cursor: pointer;
-  margin:10px 10px;
+  margin: 10px 10px;
 }
 </style>

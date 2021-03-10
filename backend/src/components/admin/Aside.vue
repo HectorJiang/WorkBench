@@ -13,7 +13,7 @@
       unique-opened
       router
     >
-      <el-menu-item index="/admin/home">
+      <el-menu-item index="/home">
         <i class="el-icon-s-home"></i>
         <span slot="title">首页</span>
       </el-menu-item>
@@ -22,9 +22,9 @@
           <i class="el-icon-notebook-2"></i>
           <span>博客管理</span>
         </template>
-        <el-menu-item index="/admin/article_list">博客列表</el-menu-item>
-        <el-menu-item index="/admin/article_add">博客撰写</el-menu-item>
-        <el-menu-item index="/admin/article_category">博客分类</el-menu-item>
+        <el-menu-item index="/article_list">博客列表</el-menu-item>
+        <el-menu-item index="/article_add">博客撰写</el-menu-item>
+        <el-menu-item index="/article_category">博客分类</el-menu-item>
       </el-submenu>
 
       <el-submenu index="2">
@@ -32,7 +32,7 @@
           <i class="el-icon-video-camera"></i>
           <span>个人空间</span>
         </template>
-        <el-menu-item index="/admin/personal">空间管理</el-menu-item>
+        <el-menu-item index="/personal">空间管理</el-menu-item>
         <!-- <el-menu-item index="/history_project">历史项目</el-menu-item>
             <el-menu-item index="/life">记录生活</el-menu-item>-->
       </el-submenu>

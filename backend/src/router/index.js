@@ -18,15 +18,13 @@ Vue.use(VueRouter)
 
 const routes = [{
     path: '/login',
-    name: 'Login',
     meta: {
         title: "请登录"
     },
     component: Login
 },
 {
-    path: '/admin',
-    name: 'admin',
+    path: '/',
     meta: {
         title: "workbench后台管理"
     },
@@ -85,6 +83,7 @@ const routes = [{
 
 const router = new VueRouter({
     mode: 'history',
+    base: '/beyond/',
     routes
 })
 
